@@ -6,7 +6,7 @@ This example demonstrates how to transition the PSoC&trade; 64 MCU from "SECURED
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc6-transition-to-rma)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzcxODQiLCJTcGVjIE51bWJlciI6IjAwMi0zNzE4NCIsIkRvYyBUaXRsZSI6IlBTb0PihKIgNjQgTUNVOiBUcmFuc2l0aW9uIHRvIFJNQSIsInJpZCI6Im5hcmF5YW5hdmFzdSIsIkRvYyB2ZXJzaW9uIjoiMS4wLjAiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzcxODQiLCJTcGVjIE51bWJlciI6IjAwMi0zNzE4NCIsIkRvYyBUaXRsZSI6IlBTb0PihKIgNjQgTUNVOiBUcmFuc2l0aW9uIHRvIFJNQSIsInJpZCI6Im5hcmF5YW5hdmFzdSIsIkRvYyB2ZXJzaW9uIjoiMS4wLjEiLCJEb2MgTGFuZ3VhZ2UiOiJFbmdsaXNoIiwiRG9jIERpdmlzaW9uIjoiTUNEIiwiRG9jIEJVIjoiSUNXIiwiRG9jIEZhbWlseSI6IlBTT0MifQ==)
 
 
 ## Requirements
@@ -30,6 +30,7 @@ This example demonstrates how to transition the PSoC&trade; 64 MCU from "SECURED
 
 - [PSoC 64 "Secure Boot" Wi-Fi pioneer kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-064b0s2-4343w/?utm_source=cypress&utm_medium=referral&utm_campaign=202110_globe_en_all_integration-dev_kit&redirId=VL1513) (`CY8CKIT-064B0S2-4343W`) – Default value of `TARGET`
 - [PSoC 64 "Secure Boot" prototyping kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-064b0s3/?utm_source=cypress&utm_medium=referral&utm_campaign=202110_globe_en_all_integration-dev_kit&redirId=VL1531) (`CY8CPROTO-064B0S3`)
+- [PSoC 64 "Secure Boot" prototyping kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-064s1-sb/) (`CY8CPROTO-064S1-SB`)
 
 **Note:** See the ["Secure Boot" SDK user guide](https://www.infineon.com/dgdl/Infineon-PSoC_64_Secure_MCU_Secure_Boot_SDK_User_Guide-Software-v07_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0f8c361a7666&da=t) before starting work with a target enabled with "Secure Boot".
 
@@ -311,7 +312,9 @@ In this step, the *cysecuretools* application provisions the device based on the
 
    To eliminate this garbled data, add a 10k pull-down resistor between the PSoC&trade; 64 P5.1 GPIO and GND. This will pull the signal to GND while the PSoC&trade; 64 GPIO is High-Z and eliminate random noise causing invalid 1s and 0s to be detected by the KitProg3 UART.
 
-5. Press the user button (SW2) to transition the device into RMA mode.
+5. Set the device voltage to 2.5 V to program eFuse to transition into RMA mode.
+
+6. Press the user button (SW2) to transition the device into RMA mode.
 
    **CAUTION:** **After transitioning the PSoC&trade; 64 MCU into RMA stage, it cannot be converted back other lifecycle stage**
 
@@ -394,6 +397,7 @@ Document title: *CE237184* – *PSoC™ 64 MCU: Transition to RMA*
  Version | Description of change
  ------- | ---------------------
  1.0.0   | New code example
+ 1.0.1   | Add support for CY8CPROTO-064S1-SB
 
 <br>
 
